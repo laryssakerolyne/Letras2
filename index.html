@@ -23,7 +23,7 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #ecd6bc;
+            background-color: #f3f3f3;
         }
 
     </style>
@@ -64,38 +64,126 @@
         align-items: center; /* Centraliza verticalmente */
         height: 100vh; /* Altura total da visualização */
         margin: 0; /* Remove a margem padrão */
-        background-color: #ecd6bc;; /* Cor de fundo da página */
+        background-color: #ffffff;; /* Cor de fundo da página */
         font-family: Arial, sans-serif; /* Fonte opcional */
     }
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
 
-    /* Estilo para a palavra centralizada */
-    .centralizado {
-        font-size: 2em; /* Tamanho da fonte opcional */
-        background-color: #4CAF50; /* Cor de fundo da palavra */
-        color: white; /* Cor do texto */
-        padding: 20px; /* Espaçamento interno */
-        border-radius: 5px; /* Bordas arredondadas */
-    }
+        .alfabeto {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
 
+        .letra {
+            padding: 10px;
+            font-size: 1.5em;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #2249c9;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
+        .letra:hover {
+            background-color: #1825e4;
+        }
 
-    body {
-        display: flex;
-        justify-content: center; /* Centraliza horizontalmente */
-        align-items: center; /* Centraliza verticalmente */
-        height: 100vh; /* Altura total da visualização */
-        margin: 0; /* Remove a margem padrão */
-        font-family: Arial, sans-serif; /* Fonte opcional */
-        background-color: #f0f0f0; /* Cor de fundo da página */
-    }
+        .palavra-formada {
+            font-size: 2em;
+            margin: 20px;
+            color: #333;
+        }
 
-    .botao {
-        padding: 20px 20px; /* Espaçamento interno do botão */
-        font-size: 1.2em; /* Tamanho da fonte */
-        color: white; /* Cor do texto */
-        background-color: #629465; /* Cor de fundo do botão */
-        border: none; /* Remove a borda padrão */
-        border-radius: 5px; /* Bordas arredondadas */
-        cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    }
-</style>
+        .botoes {
+            margin-top: 20px;
+        }
+
+        .botao {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        .botao:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="alfabeto">
+        <!-- Letras do alfabeto -->
+        <div class="letra" onclick="adicionarLetra('A')">A</div>
+        <div class="letra" onclick="adicionarLetra('B')">B</div>
+        <div class="letra" onclick="adicionarLetra('C')">C</div>
+        <div class="letra" onclick="adicionarLetra('D')">D</div>
+        <div class="letra" onclick="adicionarLetra('E')">E</div>
+        <div class="letra" onclick="adicionarLetra('F')">F</div>
+        <div class="letra" onclick="adicionarLetra('G')">G</div>
+        <div class="letra" onclick="adicionarLetra('H')">H</div>
+        <div class="letra" onclick="adicionarLetra('I')">I</div>
+        <div class="letra" onclick="adicionarLetra('J')">J</div>
+        <div class="letra" onclick="adicionarLetra('K')">K</div>
+        <div class="letra" onclick="adicionarLetra('L')">L</div>
+        <div class="letra" onclick="adicionarLetra('M')">M</div>
+        <div class="letra" onclick="adicionarLetra('N')">N</div>
+        <div class="letra" onclick="adicionarLetra('O')">O</div>
+        <div class="letra" onclick="adicionarLetra('P')">P</div>
+        <div class="letra" onclick="adicionarLetra('Q')">Q</div>
+        <div class="letra" onclick="adicionarLetra('R')">R</div>
+        <div class="letra" onclick="adicionarLetra('S')">S</div>
+        <div class="letra" onclick="adicionarLetra('T')">T</div>
+        <div class="letra" onclick="adicionarLetra('U')">U</div>
+        <div class="letra" onclick="adicionarLetra('V')">V</div>
+        <div class="letra" onclick="adicionarLetra('W')">W</div>
+        <div class="letra" onclick="adicionarLetra('X')">X</div>
+        <div class="letra" onclick="adicionarLetra('Y')">Y</div>
+        <div class="letra" onclick="adicionarLetra('Z')">Z</div>
+    </div>
+
+    <div class="palavra-formada" id="palavra"></div>
+
+    <div class="botoes">
+        <button class="botao" onclick="limparPalavra()">Limpar</button>
+        <button class="botao" onclick="finalizarPalavra()">Finalizar</button>
+    </div>
+
+    <script>
+        function adicionarLetra(letra) {
+            const palavraDiv = document.getElementById('palavra');
+            palavraDiv.textContent += letra;
+        }
+
+        function limparPalavra() {
+            const palavraDiv = document.getElementById('palavra');
+            palavraDiv.textContent = '';
+        }
+
+        function finalizarPalavra() {
+            const palavraDiv = document.getElementById('palavra');
+            alert('Palavra formada: ' + palavraDiv.textContent);
+            palavraDiv.textContent = ''; // Limpa a palavra após mostrar o alerta
+        }
+    </script>
+   
+    <style>
