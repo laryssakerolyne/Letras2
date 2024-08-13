@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centralizar Palavra</title>
     <title>Centralizar Palavra com Cor de Fundo</title>
-    <title>Página Inicial</title>
-    <title>Minha Página com Música</title>
+    <title>Página Inicial</title>     
+    <title>Página com Som</title>
 
     
        <div class="container">
@@ -14,6 +14,23 @@
         <h1>𝑀𝓊𝓃𝒹𝑜 𝒹𝒶𝓈 𝐿𝑒𝓉𝓇𝒶𝓈 </h1>
     
     </div>
+
+</head>
+<body>
+    <h1>Bem-vindo!</h1>
+    <p>Clque na letra para ouvir o som:</p>
+    <button id="playSound">Clique aqui</button>
+
+    <audio id="myAudio" src="som.mp3"></audio>
+
+    <script>
+        document.getElementById('playSound').addEventListener('click', function() {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+        });
+    </script>
+</body>
+</html>
       
     <style>
         body {
@@ -185,8 +202,7 @@
             alert('Palavra formada: ' + palavraDiv.textContent);
             palavraDiv.textContent = ''; // Limpa a palavra após mostrar o alerta
         }
-
-
+    
 
 
     </script>
